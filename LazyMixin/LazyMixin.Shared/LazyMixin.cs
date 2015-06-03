@@ -49,5 +49,7 @@ namespace Laziness
                 _value = null;
             }
         }
+
+        internal bool IsInitialized => _value != null;
     }
 }
