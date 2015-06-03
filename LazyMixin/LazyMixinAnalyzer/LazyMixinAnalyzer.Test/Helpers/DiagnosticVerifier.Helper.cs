@@ -20,6 +20,7 @@ namespace TestHelper
         private static readonly MetadataReference SystemCoreReference = MetadataReference.CreateFromAssembly(typeof(Enumerable).Assembly);
         private static readonly MetadataReference CSharpSymbolsReference = MetadataReference.CreateFromAssembly(typeof(CSharpCompilation).Assembly);
         private static readonly MetadataReference CodeAnalysisReference = MetadataReference.CreateFromAssembly(typeof(Compilation).Assembly);
+        private static readonly MetadataReference TargetLibraryReference = MetadataReference.CreateFromAssembly(typeof(Laziness.LazyMixin<>).Assembly);
 
         internal static string DefaultFilePathPrefix = "Test";
         internal static string CSharpDefaultFileExt = "cs";
@@ -161,7 +162,8 @@ namespace TestHelper
                 .AddMetadataReference(projectId, CorlibReference)
                 .AddMetadataReference(projectId, SystemCoreReference)
                 .AddMetadataReference(projectId, CSharpSymbolsReference)
-                .AddMetadataReference(projectId, CodeAnalysisReference);
+                .AddMetadataReference(projectId, CodeAnalysisReference)
+                .AddMetadataReference(projectId, TargetLibraryReference);
 
             int count = 0;
             foreach (var source in sources)

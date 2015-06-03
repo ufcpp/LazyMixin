@@ -116,6 +116,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\LazyMixin.Portable\LazyMixin.Portable.csproj">
+      <Project>{c5b9e7eb-a6cb-4d8d-9386-0c807b232330}</Project>
+      <Name>LazyMixin.Portable</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LazyMixinAnalyzer\LazyMixinAnalyzer.csproj">
       <Project>{273A2964-6D7C-4397-AAE2-D2539707BDDE}</Project>
       <Name>LazyMixinAnalyzer</Name>
