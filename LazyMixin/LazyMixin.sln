@@ -11,6 +11,12 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LazyMixin.Shared", "LazyMix
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyMixin.Test", "LazyMixin.Test\LazyMixin.Test.csproj", "{4B269F2A-8B81-4A58-9D8A-2680EDF7BA57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyMixinAnalyzer", "LazyMixinAnalyzer\LazyMixinAnalyzer\LazyMixinAnalyzer.csproj", "{273A2964-6D7C-4397-AAE2-D2539707BDDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyMixinAnalyzer.Test", "LazyMixinAnalyzer\LazyMixinAnalyzer.Test\LazyMixinAnalyzer.Test.csproj", "{D7170A8E-3F68-4BE0-8889-B67036BB2F75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyMixinAnalyzer.Vsix", "LazyMixinAnalyzer\LazyMixinAnalyzer.Vsix\LazyMixinAnalyzer.Vsix.csproj", "{01C7AAF9-EA59-4FAD-A0CB-078ED5FCE090}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		LazyMixin.Shared\LazyMixin.Shared.projitems*{17e7f5f1-9853-4d9c-afe4-c52bc9536738}*SharedItemsImports = 4
@@ -34,6 +40,18 @@ Global
 		{4B269F2A-8B81-4A58-9D8A-2680EDF7BA57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B269F2A-8B81-4A58-9D8A-2680EDF7BA57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B269F2A-8B81-4A58-9D8A-2680EDF7BA57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{273A2964-6D7C-4397-AAE2-D2539707BDDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{273A2964-6D7C-4397-AAE2-D2539707BDDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{273A2964-6D7C-4397-AAE2-D2539707BDDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{273A2964-6D7C-4397-AAE2-D2539707BDDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7170A8E-3F68-4BE0-8889-B67036BB2F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7170A8E-3F68-4BE0-8889-B67036BB2F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7170A8E-3F68-4BE0-8889-B67036BB2F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7170A8E-3F68-4BE0-8889-B67036BB2F75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01C7AAF9-EA59-4FAD-A0CB-078ED5FCE090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01C7AAF9-EA59-4FAD-A0CB-078ED5FCE090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01C7AAF9-EA59-4FAD-A0CB-078ED5FCE090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01C7AAF9-EA59-4FAD-A0CB-078ED5FCE090}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
