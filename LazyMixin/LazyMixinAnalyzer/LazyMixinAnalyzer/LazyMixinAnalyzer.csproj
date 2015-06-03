@@ -35,8 +35,6 @@
     <Compile Include="AccessViaProperty\AccessViaPropertyAnalyzer.cs" />
     <Compile Include="AccessViaProperty\AccessViaPropertyCodeFixProvider.cs" />
     <Compile Include="AssemblyAttributes.cs" />
-    <Compile Include="CodeFixProvider.cs" />
-    <Compile Include="DiagnosticAnalyzer.cs" />
     <Compile Include="DoNotUseLazyForProperty\DoNotUseLazyForPropertyAnalyzer.cs" />
     <Compile Include="DoNotUseLazyForReadonlyField\DoNotUseLazyForReadonlyFieldAnalyzer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,7 +62,6 @@
     <None Include="tools\uninstall.ps1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0-rc2\tools\analyzers\C#\Microsoft.CodeAnalysis.Analyzers.dll" />
