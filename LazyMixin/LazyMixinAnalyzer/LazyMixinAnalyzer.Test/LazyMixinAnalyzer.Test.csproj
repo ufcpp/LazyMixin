@@ -104,6 +104,7 @@
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessViaPropertyUnitTests.cs" />
     <Compile Include="DoNotUseLazyForPropertyUnitTests.cs" />
     <Compile Include="DoNotUseLazyForReadonlyFieldUnitTests.cs" />
     <Compile Include="Verifiers\CodeFixVerifier.cs" />

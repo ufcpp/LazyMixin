@@ -32,6 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AccessViaProperty\AccessViaPropertyAnalyzer.cs" />
+    <Compile Include="AccessViaProperty\AccessViaPropertyCodeFixProvider.cs" />
     <Compile Include="AssemblyAttributes.cs" />
     <Compile Include="CodeFixProvider.cs" />
     <Compile Include="DiagnosticAnalyzer.cs" />
