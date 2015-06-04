@@ -2,16 +2,16 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>LazyMixin</id>
-    <version>1.0.0.0</version>
+    <version>1.1.0.0</version>
     <title>LazyMixin</title>
     <authors>LazyMixin</authors>
     <owners>LazyMixin</owners>
     <licenseUrl>https://github.com/ufcpp/LazyMixin/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/ufcpp/LazyMixin</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>LazyMixin</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-    <copyright>Copyright</copyright>
+    <description>Simple mixin-like implementation for lazy initialization</description>
+    <releaseNotes>add support to versions less than .NET 4.</releaseNotes>
+    <copyright>Nobuyuki Iwanaga</copyright>
     <tags>LazyMixin, analyzers</tags>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System" targetFramework="" />
@@ -19,7 +19,8 @@
   </metadata>
   <files>
       <file src="LazyMixinAnalyzer.dll" target="tools\analyzers\" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*" />
-      <file src="LazyMixin.dll" target="lib\" />
+      <file src="LazyMixin.V2.dll" target="lib\net20\" />
+      <file src="LazyMixin.dll" target="lib\portable-win+net40+MonoAndroid16+MonoTouch40\" />
     <file src="tools\*.ps1" target="tools\" />
   </files>
 </package>
