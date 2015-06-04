@@ -20,14 +20,14 @@ The `LazyMixin<T>` struct is simple and efficient in memory usage, but has tight
 for instance:
 
     // Do not
-    public Lazy<T> X { get; }
+    public LazyMixin<T> X { get; }
 
     // Do not
-    private readonly Lazy<T> _x;
+    private readonly LazyMixin<T> _x;
 
     // Recommended usage
     public T X => _x.Value;
-    private Lazy<T> _x;
+    private LazyMixin<T> _x;
 
 It is thus highly recommended to use this struct with the LazyMixinAnalyzer analyzer.
 This analyzer is included within the LazyMixin Nuget package so that you can automatically use it.
