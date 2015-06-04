@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>LazyMixin</id>
-    <version>1.1.0.0</version>
+    <version>1.2.1.0</version>
     <title>LazyMixin</title>
     <authors>LazyMixin</authors>
     <owners>LazyMixin</owners>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/ufcpp/LazyMixin</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Simple mixin-like implementation for lazy initialization</description>
-    <releaseNotes>add support to versions less than .NET 4.</releaseNotes>
+    <releaseNotes>add doc xml files.</releaseNotes>
     <copyright>Nobuyuki Iwanaga</copyright>
     <tags>LazyMixin, analyzers</tags>
     <frameworkAssemblies>
@@ -20,7 +20,11 @@
   <files>
       <file src="LazyMixinAnalyzer.dll" target="tools\analyzers\" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*" />
       <file src="LazyMixin.V2.dll" target="lib\net20\" />
-      <file src="LazyMixin.dll" target="lib\portable-win+net40+MonoAndroid16+MonoTouch40\" />
+      <file src="LazyMixin.V2.pdb" target="lib\net20\" />
+      <file src="LazyMixin.V2.xml" target="lib\net20\" />
+      <file src="LazyMixin.dll" target="lib\portable-win+net40+dnxcore50+monotouch+monoandroid+Xamarin.iOS\" />
+      <file src="LazyMixin.pdb" target="lib\portable-win+net40+dnxcore50+monotouch+monoandroid+Xamarin.iOS\" />
+      <file src="LazyMixin.xml" target="lib\portable-win+net40+dnxcore50+monotouch+monoandroid+Xamarin.iOS\" />
     <file src="tools\*.ps1" target="tools\" />
   </files>
 </package>
