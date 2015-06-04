@@ -36,21 +36,21 @@ The analyzer provides:
 
 Error on using `LazyMixin<T>` for a property
 
-    public Lazy<T> X { get; } // error: DoNotUseLazyForProperty
+    public LazyMixin<T> X { get; } // error: DoNotUseLazyForProperty
 
 Error on using `LazyMixin<T>` for a read-only field
 
-    private readonly Lazy<T> _x; // error: DoNotUseLazyForReadonlyField
+    private readonly LazyMixin<T> _x; // error: DoNotUseLazyForReadonlyField
 
 Code Fix to encapsulate a `LazyMixin<T>` field with a property
 
-    private Lazy<T> _x; // info: AccessViaProperty
+    private LazyMixin<T> _x; // info: AccessViaProperty
 
 the fix result is:
 
     public T X => _x.Value;
     
-    private Lazy<T> _x;
+    private LazyMixin<T> _x;
 
 ## Sample
 
