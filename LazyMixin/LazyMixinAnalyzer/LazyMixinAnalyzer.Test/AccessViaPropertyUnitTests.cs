@@ -7,94 +7,25 @@ using TestHelper;
 namespace LazyMixinAnalyzer.Test
 {
     [TestClass]
-    public class AccessViaPropertyUnitTest : CodeFixVerifier
+    public class AccessViaPropertyUnitTest : ContractCodeFixVerifier
     {
         [TestMethod]
-        public void NoDiagnositcs()
-        {
-            var test = @"
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Diagnostics;
-using Laziness;
-
-namespace ConsoleApplication1
-{
-    class TypeName
-    {
-        public StringBuilder X => _x.Value;
-        private LazyMixin<StringBuilder> _x;
-    }
-}";
-
-            VerifyCSharpDiagnostic(test);
-        }
+        public void NoDiagnositcs() => VerifyDiagnostic();
 
         [TestMethod]
-        public void AccessViaProperty()
+        public void AccessViaProperty() => VerifyCodeFix(new DiagnosticResult
         {
-            var test = @"
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Diagnostics;
-using Laziness;
-
-namespace ConsoleApplication1
-{
-    class TypeName
-    {
-        private LazyMixin<StringBuilder> _x;
-    }
-}";
-            var expected = new DiagnosticResult
+            Id = AccessViaPropertyAnalyzer.DiagnosticId,
+            Message = string.Format(AccessViaPropertyAnalyzer.MessageFormat, "_x"),
+            Severity = DiagnosticSeverity.Info,
+            Locations = new[]
             {
-                Id = AccessViaPropertyAnalyzer.DiagnosticId,
-                Message = string.Format(AccessViaPropertyAnalyzer.MessageFormat, "_x"),
-                Severity = DiagnosticSeverity.Info,
-                Locations =
-                    new[]
-                    {
-                        new DiagnosticResultLocation("Test0.cs", 14, 42)
-                    }
-            };
+                new DiagnosticResultLocation("Test0.cs", 13, 42)
+            }
+        });
 
-            VerifyCSharpDiagnostic(test, expected);
+        protected override CodeFixProvider GetCSharpCodeFixProvider() => new AccessViaPropertyCodeFixProvider();
 
-            var fixtest = @"
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Diagnostics;
-using Laziness;
-
-namespace ConsoleApplication1
-{
-    class TypeName
-    {
-        public StringBuilder X => _x.Value;
-
-        private LazyMixin<StringBuilder> _x;
-    }
-}";
-            VerifyCSharpFix(test, fixtest);
-        }
-
-        protected override CodeFixProvider GetCSharpCodeFixProvider()
-        {
-            return new AccessViaPropertyCodeFixProvider();
-        }
-
-        protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer()
-        {
-            return new AccessViaPropertyAnalyzer();
-        }
+        protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer() => new AccessViaPropertyAnalyzer();
     }
 }

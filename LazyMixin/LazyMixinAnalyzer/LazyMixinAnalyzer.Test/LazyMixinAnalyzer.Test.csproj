@@ -105,9 +105,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessViaPropertyUnitTests.cs" />
+    <None Include="DataSource\Common\Header.cs" />
+    <None Include="DataSource\Common\Footer.cs" />
+    <None Include="DataSource\AccessViaPropertyUnitTest\NoDiagnositcs\Source.cs" />
+    <None Include="DataSource\AccessViaPropertyUnitTest\AccessViaProperty\Source.cs" />
+    <None Include="DataSource\AccessViaPropertyUnitTest\AccessViaProperty\NewSource.cs" />
+    <None Include="DataSource\DoNotUseLazyForPropertyUnitTest\DoNotUseLazyForProperty\Source.cs" />
+    <None Include="DataSource\DoNotUseLazyForPropertyUnitTest\NoDiagnositcs\Source.cs" />
+    <None Include="DataSource\DoNotUseLazyForReadonlyFieldUnitTest\DoNotUseLazyForReadonlyField\Source.cs" />
+    <None Include="DataSource\DoNotUseLazyForReadonlyFieldUnitTest\NoDiagnositcs\Source.cs" />
     <Compile Include="DoNotUseLazyForPropertyUnitTests.cs" />
     <Compile Include="DoNotUseLazyForReadonlyFieldUnitTests.cs" />
     <Compile Include="Verifiers\CodeFixVerifier.cs" />
+    <Compile Include="Verifiers\ContractCodeFixVerifier.cs" />
     <Compile Include="Verifiers\DiagnosticVerifier.cs" />
     <Compile Include="Helpers\CodeFixVerifier.Helper.cs" />
     <Compile Include="Helpers\DiagnosticResult.cs" />
