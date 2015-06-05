@@ -21,10 +21,7 @@ namespace LazyMixinAnalyzer
     {
         public sealed override ImmutableArray<string> FixableDiagnosticIds => ImmutableArray.Create(AccessViaPropertyAnalyzer.DiagnosticId);
 
-        public sealed override FixAllProvider GetFixAllProvider()
-        {
-            return WellKnownFixAllProviders.BatchFixer;
-        }
+        public sealed override FixAllProvider GetFixAllProvider() => WellKnownFixAllProviders.BatchFixer;
 
         public override async Task RegisterCodeFixesAsync(CodeFixContext context)
         {
