@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>LazyMixin</id>
-    <version>1.2.1.0</version>
+    <version>2.0.0.0</version>
     <title>LazyMixin</title>
     <authors>LazyMixin</authors>
     <owners>LazyMixin</owners>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/ufcpp/LazyMixin</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Simple mixin-like implementation for lazy initialization</description>
-    <releaseNotes>add doc xml files.</releaseNotes>
+    <releaseNotes>Upgrade to Microsoft.CodeAnalysis RC3.</releaseNotes>
     <copyright>Nobuyuki Iwanaga</copyright>
     <tags>LazyMixin, analyzers</tags>
     <frameworkAssemblies>
