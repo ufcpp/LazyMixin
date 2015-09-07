@@ -1,0 +1,10 @@
+﻿[
+  {
+    "id": "DoNotUseLazyForReadonlyField",
+    "line": 13,
+    "column": 43,
+    "sevirity": "Error",
+    "message-args": [ "_x" ],
+    "path": "TypeName.cs"
+  }
+]

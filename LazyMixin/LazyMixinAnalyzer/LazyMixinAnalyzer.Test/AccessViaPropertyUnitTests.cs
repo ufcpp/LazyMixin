@@ -2,30 +2,34 @@
 using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using TestHelper;
 
 namespace LazyMixinAnalyzer.Test
 {
     [TestClass]
-    public class AccessViaPropertyUnitTest : ContractCodeFixVerifier
+    public class AccessViaPropertyUnitTest : ConventionCodeFixVerifier
     {
         [TestMethod]
-        public void NoDiagnositcs() => VerifyDiagnostic();
+        public void NoDiagnositcs() => VerifyCSharpByConvention();
 
         [TestMethod]
-        public void AccessViaProperty() => VerifyCodeFix(new DiagnosticResult
-        {
-            Id = AccessViaPropertyAnalyzer.DiagnosticId,
-            Message = string.Format(AccessViaPropertyAnalyzer.MessageFormat, "_x"),
-            Severity = DiagnosticSeverity.Info,
-            Locations = new[]
-            {
-                new DiagnosticResultLocation("Test0.cs", 13, 42)
-            }
-        });
+        public void AccessViaProperty() => VerifyCSharpByConvention();
+
+        [TestMethod]
+        public void AccessViaPropertyWithQualifiedName() => VerifyCSharpByConvention();
 
         protected override CodeFixProvider GetCSharpCodeFixProvider() => new AccessViaPropertyCodeFixProvider();
 
         protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer() => new AccessViaPropertyAnalyzer();
+
+        protected override IEnumerable<MetadataReference> References
+        {
+            get
+            {
+                foreach (var x in base.References) yield return x;
+                yield return MetadataReference.CreateFromFile(typeof(Laziness.LazyMixin<>).Assembly.Location);
+            }
+        }
     }
 }

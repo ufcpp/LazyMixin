@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CodeActions;
+using Microsoft.CodeAnalysis.CodeFixes;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.Formatting;
 using System.Collections.Immutable;
 using System.Composition;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CodeFixes;
-using Microsoft.CodeAnalysis.CodeActions;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.Rename;
-using Microsoft.CodeAnalysis.Text;
-using Microsoft.CodeAnalysis.Formatting;
 
 namespace LazyMixinAnalyzer
 {
@@ -36,7 +32,7 @@ namespace LazyMixinAnalyzer
 
             // Register a code action that will invoke the fix.
             context.RegisterCodeFix(
-                CodeAction.Create("Encapsulate", c => Encapsulate(context.Document, declaration, c)),
+                CodeAction.Create("Encapsulate", c => Encapsulate(context.Document, declaration, c), "EncapsulateLazyMixinField"),
                 diagnostic);
         }
 
@@ -44,9 +40,24 @@ namespace LazyMixinAnalyzer
         private static readonly SyntaxToken ArrowToken = SyntaxFactory.Token(SyntaxKind.EqualsGreaterThanToken);
         private static readonly SyntaxToken SemicolonToken = SyntaxFactory.Token(SyntaxKind.SemicolonToken);
 
+        private GenericNameSyntax GetType(TypeSyntax t)
+        {
+            var gt = t as GenericNameSyntax;
+            if (gt != null) return gt;
+
+            var qt = t as QualifiedNameSyntax;
+            if (qt != null) return GetType(qt.Right);
+
+            //todo: AliasQualifiedNameSyntax
+            return null;
+        }
+
         private async Task<Document> Encapsulate(Document document, FieldDeclarationSyntax f, CancellationToken cancellationToken)
         {
-            var fieldType = (GenericNameSyntax)f.Declaration.Type;
+            var fieldType = GetType(f.Declaration.Type);
+
+            if (fieldType == null) return document;
+
             var fieldName = f.Declaration.Variables.First().Identifier.ValueText;
             var lower = fieldName.TrimStart('_');
             var upper = char.ToUpper(lower[0]) + lower.Substring(1, lower.Length - 1);

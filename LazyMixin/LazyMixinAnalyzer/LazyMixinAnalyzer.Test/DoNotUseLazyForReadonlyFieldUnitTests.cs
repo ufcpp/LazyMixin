@@ -1,28 +1,29 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using TestHelper;
 
 namespace LazyMixinAnalyzer.Test
 {
     [TestClass]
-    public class DoNotUseLazyForReadonlyFieldUnitTest : ContractCodeFixVerifier
+    public class DoNotUseLazyForReadonlyFieldUnitTest : ConventionCodeFixVerifier
     {
         [TestMethod]
-        public void NoDiagnositcs() => VerifyDiagnostic();
+        public void NoDiagnositcs() => VerifyCSharpByConvention();
 
         [TestMethod]
-        public void DoNotUseLazyForReadonlyField() => VerifyDiagnostic(new DiagnosticResult
-        {
-            Id = DoNotUseLazyForReadonlyFieldAnalyzer.DiagnosticId,
-            Message = string.Format(DoNotUseLazyForReadonlyFieldAnalyzer.MessageFormat, "_x"),
-            Severity = DiagnosticSeverity.Error,
-            Locations = new[]
-            {
-                new DiagnosticResultLocation("Test0.cs", 13, 43)
-            }
-        });
+        public void DoNotUseLazyForReadonlyField() => VerifyCSharpByConvention();
 
         protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer() => new DoNotUseLazyForReadonlyFieldAnalyzer();
+
+        protected override IEnumerable<MetadataReference> References
+        {
+            get
+            {
+                foreach (var x in base.References) yield return x;
+                yield return MetadataReference.CreateFromFile(typeof(Laziness.LazyMixin<>).Assembly.Location);
+            }
+        }
     }
 }

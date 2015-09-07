@@ -1,0 +1,10 @@
+﻿[
+  {
+    "id": "AccessViaProperty",
+    "line": 13,
+    "column": 42,
+    "sevirity": "Info",
+    "message-args": [ "_x" ],
+    "path": "TypeName.cs"
+  }
+]

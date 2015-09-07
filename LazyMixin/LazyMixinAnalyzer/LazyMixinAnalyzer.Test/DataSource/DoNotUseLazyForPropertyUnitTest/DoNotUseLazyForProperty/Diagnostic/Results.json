@@ -1,0 +1,10 @@
+﻿[
+  {
+    "id": "DoNotUseLazyForProperty",
+    "line": 13,
+    "column": 9,
+    "sevirity": "Error",
+    "message-args": [ "X" ],
+    "path": "TypeName.cs"
+  }
+]

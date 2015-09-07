@@ -1,4 +1,5 @@
-﻿using Microsoft.CodeAnalysis;
+﻿using System.Collections.Generic;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestHelper;
@@ -6,23 +7,23 @@ using TestHelper;
 namespace LazyMixinAnalyzer.Test
 {
     [TestClass]
-    public class DoNotUseLazyForPropertyUnitTest : ContractCodeFixVerifier
+    public class DoNotUseLazyForPropertyUnitTest : ConventionCodeFixVerifier
     {
         [TestMethod]
-        public void NoDiagnositcs() => VerifyDiagnostic();
+        public void NoDiagnositcs() => VerifyCSharpByConvention();
 
         [TestMethod]
-        public void DoNotUseLazyForProperty() => VerifyDiagnostic(new DiagnosticResult
-        {
-            Id = DoNotUseLazyForPropertyAnalyzer.DiagnosticId,
-            Message = string.Format(DoNotUseLazyForPropertyAnalyzer.MessageFormat, "X"),
-            Severity = DiagnosticSeverity.Error,
-            Locations = new[]
-            {
-                new DiagnosticResultLocation("Test0.cs", 13, 9)
-            }
-        });
+        public void DoNotUseLazyForProperty() => VerifyCSharpByConvention();
 
         protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer() => new DoNotUseLazyForPropertyAnalyzer();
+
+        protected override IEnumerable<MetadataReference> References
+        {
+            get
+            {
+                foreach (var x in base.References) yield return x;
+                yield return MetadataReference.CreateFromFile(typeof(Laziness.LazyMixin<>).Assembly.Location);
+            }
+        }
     }
 }
