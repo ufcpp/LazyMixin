@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>LazyMixinAnalyzer</id>
-    <version>2.0.0.0</version>
+    <version>2.3.0.0</version>
     <title>LazyMixinAnalyzer</title>
     <authors>LazyMixinAnalyzer</authors>
     <owners>LazyMixinAnalyzer</owners>
@@ -11,7 +11,7 @@
     <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>LazyMixinAnalyzer</description>
-    <releaseNotes>Upgrade to Microsoft.CodeAnalysis RC3.</releaseNotes>
+    <releaseNotes>fix NullReferenceException.</releaseNotes>
     <copyright>Copyright</copyright>
     <tags>LazyMixinAnalyzer, analyzers</tags>
     <frameworkAssemblies>

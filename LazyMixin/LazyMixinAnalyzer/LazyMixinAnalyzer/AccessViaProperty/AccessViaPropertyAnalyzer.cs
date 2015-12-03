@@ -20,10 +20,10 @@ namespace LazyMixinAnalyzer
 
         public override void Initialize(AnalysisContext context)
         {
-            context.RegisterSymbolAction(AnalyzeFiedlDeclaration, SymbolKind.Field);
+            context.RegisterSymbolAction(AnalyzeFieldDeclaration, SymbolKind.Field);
         }
 
-        private void AnalyzeFiedlDeclaration(SymbolAnalysisContext context)
+        private void AnalyzeFieldDeclaration(SymbolAnalysisContext context)
         {
             var f = (IFieldSymbol)context.Symbol;
 
@@ -37,7 +37,7 @@ namespace LazyMixinAnalyzer
 
             var t = f.Type;
 
-            if (t.ContainingNamespace.Name == "Laziness" && t.MetadataName == "LazyMixin`1")
+            if (t.IsTargetType())
             {
                 var node = f.DeclaringSyntaxReferences.First().GetSyntax();
                 var diagnostic = Diagnostic.Create(Rule, node.GetLocation(), f.Name);

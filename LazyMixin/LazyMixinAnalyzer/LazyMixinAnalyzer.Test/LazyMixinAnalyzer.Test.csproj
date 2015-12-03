@@ -111,6 +111,7 @@
     <None Include="DataSource\DoNotUseLazyForReadonlyFieldUnitTest\NoDiagnositcs\Source.cs" />
     <None Include="DataSource\AccessViaPropertyUnitTest\AccessViaPropertyWithQualifiedName\Expected\TypeName.cs" />
     <None Include="DataSource\AccessViaPropertyUnitTest\AccessViaPropertyWithQualifiedName\Source\TypeName.cs" />
+    <None Include="DataSource\AccessViaPropertyUnitTest\NoNamespace\Source.cs" />
     <Compile Include="DoNotUseLazyForPropertyUnitTests.cs" />
     <Compile Include="DoNotUseLazyForReadonlyFieldUnitTests.cs" />
     <Compile Include="Verifiers\CodeFixVerifier.cs" />

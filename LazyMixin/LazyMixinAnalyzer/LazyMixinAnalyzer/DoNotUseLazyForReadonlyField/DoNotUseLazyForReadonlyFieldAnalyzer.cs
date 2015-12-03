@@ -32,7 +32,7 @@ namespace LazyMixinAnalyzer
 
             var t = f.Type;
 
-            if (t.ContainingNamespace.Name == "Laziness" && t.MetadataName == "LazyMixin`1")
+            if (t.IsTargetType())
             {
                 var node = f.DeclaringSyntaxReferences.First().GetSyntax();
                 var diagnostic = Diagnostic.Create(Rule, node.GetLocation(), f.Name);

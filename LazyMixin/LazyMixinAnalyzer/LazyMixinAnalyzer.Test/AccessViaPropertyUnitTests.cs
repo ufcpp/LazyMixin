@@ -14,6 +14,9 @@ namespace LazyMixinAnalyzer.Test
         public void NoDiagnositcs() => VerifyCSharpByConvention();
 
         [TestMethod]
+        public void NoNamespace() => VerifyCSharpByConvention();
+
+        [TestMethod]
         public void AccessViaProperty() => VerifyCSharpByConvention();
 
         [TestMethod]
