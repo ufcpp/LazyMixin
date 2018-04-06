@@ -1,25 +1,24 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using TestHelper;
+using Xunit;
 
 namespace LazyMixinAnalyzer.Test
 {
-    [TestClass]
     public class AccessViaPropertyUnitTest : ConventionCodeFixVerifier
     {
-        [TestMethod]
+        [Fact]
         public void NoDiagnositcs() => VerifyCSharpByConvention();
 
-        [TestMethod]
+        [Fact]
         public void NoNamespace() => VerifyCSharpByConvention();
 
-        [TestMethod]
+        [Fact]
         public void AccessViaProperty() => VerifyCSharpByConvention();
 
-        [TestMethod]
+        [Fact]
         public void AccessViaPropertyWithQualifiedName() => VerifyCSharpByConvention();
 
         protected override CodeFixProvider GetCSharpCodeFixProvider() => new AccessViaPropertyCodeFixProvider();

@@ -1,18 +1,17 @@
 ﻿using System.Collections.Generic;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestHelper;
+using Xunit;
 
 namespace LazyMixinAnalyzer.Test
 {
-    [TestClass]
     public class DoNotUseLazyForPropertyUnitTest : ConventionCodeFixVerifier
     {
-        [TestMethod]
+        [Fact]
         public void NoDiagnositcs() => VerifyCSharpByConvention();
 
-        [TestMethod]
+        [Fact]
         public void DoNotUseLazyForProperty() => VerifyCSharpByConvention();
 
         protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer() => new DoNotUseLazyForPropertyAnalyzer();

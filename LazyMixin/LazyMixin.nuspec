@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>LazyMixin</id>
+    <version>2.4.0</version>
+    <title>LazyMixin</title>
+    <authors>LazyMixin</authors>
+    <owners>LazyMixin</owners>
+    <licenseUrl>https://github.com/ufcpp/LazyMixin/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/ufcpp/LazyMixin</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>support netstandard</description>
+    <releaseNotes>fix NullReferenceException.</releaseNotes>
+    <copyright>Nobuyuki Iwanaga</copyright>
+    <tags>LazyMixin, analyzers</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="LazyMixin\bin\Release\**\*" target="lib" exclude="**\*.json" />
+    <file src="LazyMixinAnalyzer\LazyMixinAnalyzer\bin\Release\netstandard1.4\*.dll" target="analyzers\C#" exclude="**\*.json" />
+  </files>
+</package>

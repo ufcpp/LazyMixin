@@ -134,6 +134,8 @@ publish/
 *.pubxml
 *.publishproj
 
+**/nuget.exe
+
 # NuGet Packages
 *.nupkg
 !LazyMixin.nupkg

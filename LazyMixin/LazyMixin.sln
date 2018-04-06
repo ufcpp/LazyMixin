@@ -1,47 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.22823.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyMixin.V2", "LazyMixin.V2\LazyMixin.V2.csproj", "{17E7F5F1-9853-4D9C-AFE4-C52BC9536738}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{37BE6EFD-9201-482A-B0FD-D599C490ADB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyMixin.Portable", "LazyMixin.Portable\LazyMixin.Portable.csproj", "{C5B9E7EB-A6CB-4D8D-9386-0C807B232330}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LazyMixin.Shared", "LazyMixin.Shared\LazyMixin.Shared.shproj", "{C887D8AA-6E70-45A8-AAA9-CB58E7B101F5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analyzer", "Analyzer", "{0A96B652-B64E-4F21-9EB9-1BC8F7DE2D3E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyMixin.Test", "LazyMixin.Test\LazyMixin.Test.csproj", "{4B269F2A-8B81-4A58-9D8A-2680EDF7BA57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyMixinAnalyzer", "LazyMixinAnalyzer\LazyMixinAnalyzer\LazyMixinAnalyzer.csproj", "{273A2964-6D7C-4397-AAE2-D2539707BDDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LazyMixinAnalyzer", "LazyMixinAnalyzer\LazyMixinAnalyzer\LazyMixinAnalyzer.csproj", "{273A2964-6D7C-4397-AAE2-D2539707BDDE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyMixinAnalyzer.Test", "LazyMixinAnalyzer\LazyMixinAnalyzer.Test\LazyMixinAnalyzer.Test.csproj", "{D7170A8E-3F68-4BE0-8889-B67036BB2F75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyMixinAnalyzer.Vsix", "LazyMixinAnalyzer\LazyMixinAnalyzer.Vsix\LazyMixinAnalyzer.Vsix.csproj", "{01C7AAF9-EA59-4FAD-A0CB-078ED5FCE090}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{37BE6EFD-9201-482A-B0FD-D599C490ADB7}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analyzer", "Analyzer", "{0A96B652-B64E-4F21-9EB9-1BC8F7DE2D3E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyMixin.Nupkg", "LazyMixin.Nupkg\LazyMixin.Nupkg.csproj", "{A1C6F360-7E7E-44F3-BA84-49743B74727C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyMixin", "LazyMixin\LazyMixin.csproj", "{B0153B2A-AAE8-411E-92CD-627FEC95B303}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		LazyMixin.Shared\LazyMixin.Shared.projitems*{17e7f5f1-9853-4d9c-afe4-c52bc9536738}*SharedItemsImports = 4
-		LazyMixin.Shared\LazyMixin.Shared.projitems*{c887d8aa-6e70-45a8-aaa9-cb58e7b101f5}*SharedItemsImports = 13
-		LazyMixin.Shared\LazyMixin.Shared.projitems*{c5b9e7eb-a6cb-4d8d-9386-0c807b232330}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{17E7F5F1-9853-4D9C-AFE4-C52BC9536738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17E7F5F1-9853-4D9C-AFE4-C52BC9536738}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17E7F5F1-9853-4D9C-AFE4-C52BC9536738}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17E7F5F1-9853-4D9C-AFE4-C52BC9536738}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C5B9E7EB-A6CB-4D8D-9386-0C807B232330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C5B9E7EB-A6CB-4D8D-9386-0C807B232330}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C5B9E7EB-A6CB-4D8D-9386-0C807B232330}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C5B9E7EB-A6CB-4D8D-9386-0C807B232330}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4B269F2A-8B81-4A58-9D8A-2680EDF7BA57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4B269F2A-8B81-4A58-9D8A-2680EDF7BA57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B269F2A-8B81-4A58-9D8A-2680EDF7BA57}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -58,22 +39,22 @@ Global
 		{01C7AAF9-EA59-4FAD-A0CB-078ED5FCE090}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01C7AAF9-EA59-4FAD-A0CB-078ED5FCE090}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01C7AAF9-EA59-4FAD-A0CB-078ED5FCE090}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A1C6F360-7E7E-44F3-BA84-49743B74727C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A1C6F360-7E7E-44F3-BA84-49743B74727C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A1C6F360-7E7E-44F3-BA84-49743B74727C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A1C6F360-7E7E-44F3-BA84-49743B74727C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0153B2A-AAE8-411E-92CD-627FEC95B303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0153B2A-AAE8-411E-92CD-627FEC95B303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0153B2A-AAE8-411E-92CD-627FEC95B303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0153B2A-AAE8-411E-92CD-627FEC95B303}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{17E7F5F1-9853-4D9C-AFE4-C52BC9536738} = {37BE6EFD-9201-482A-B0FD-D599C490ADB7}
-		{C5B9E7EB-A6CB-4D8D-9386-0C807B232330} = {37BE6EFD-9201-482A-B0FD-D599C490ADB7}
-		{C887D8AA-6E70-45A8-AAA9-CB58E7B101F5} = {37BE6EFD-9201-482A-B0FD-D599C490ADB7}
 		{4B269F2A-8B81-4A58-9D8A-2680EDF7BA57} = {37BE6EFD-9201-482A-B0FD-D599C490ADB7}
 		{273A2964-6D7C-4397-AAE2-D2539707BDDE} = {0A96B652-B64E-4F21-9EB9-1BC8F7DE2D3E}
 		{D7170A8E-3F68-4BE0-8889-B67036BB2F75} = {0A96B652-B64E-4F21-9EB9-1BC8F7DE2D3E}
 		{01C7AAF9-EA59-4FAD-A0CB-078ED5FCE090} = {0A96B652-B64E-4F21-9EB9-1BC8F7DE2D3E}
-		{A1C6F360-7E7E-44F3-BA84-49743B74727C} = {37BE6EFD-9201-482A-B0FD-D599C490ADB7}
+		{B0153B2A-AAE8-411E-92CD-627FEC95B303} = {37BE6EFD-9201-482A-B0FD-D599C490ADB7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BADDBD70-EF7C-42F5-8BCF-4AC5742E9A73}
 	EndGlobalSection
 EndGlobal
