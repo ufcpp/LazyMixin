@@ -1,18 +1,17 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using TestHelper;
+using Xunit;
 
 namespace LazyMixinAnalyzer.Test
 {
-    [TestClass]
     public class DoNotUseLazyForReadonlyFieldUnitTest : ConventionCodeFixVerifier
     {
-        [TestMethod]
+        [Fact]
         public void NoDiagnositcs() => VerifyCSharpByConvention();
 
-        [TestMethod]
+        [Fact]
         public void DoNotUseLazyForReadonlyField() => VerifyCSharpByConvention();
 
         protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer() => new DoNotUseLazyForReadonlyFieldAnalyzer();

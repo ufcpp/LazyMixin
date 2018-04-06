@@ -1,32 +1,31 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Xunit;
 
 namespace Laziness.Test
 {
-    [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
+        [Fact]
         public void TestLazyMixinCounter()
         {
             var sample = new Sample();
 
-            Assert.IsFalse(sample.IsInitialized);
+            Assert.False(sample.IsInitialized);
             sample.Counter.Add();
-            Assert.IsTrue(sample.IsInitialized);
+            Assert.True(sample.IsInitialized);
             sample.Counter.Add();
             sample.Counter.Add();
             sample.Counter.Add();
-            Assert.AreEqual(4, sample.Counter.Count);
+            Assert.Equal(4, sample.Counter.Count);
 
             sample.Reset();
 
-            Assert.IsFalse(sample.IsInitialized);
+            Assert.False(sample.IsInitialized);
             sample.Counter.Add();
-            Assert.IsTrue(sample.IsInitialized);
+            Assert.True(sample.IsInitialized);
             sample.Counter.Add();
             sample.Counter.Add();
             sample.Counter.Add();
-            Assert.AreEqual(4, sample.Counter.Count);
+            Assert.Equal(4, sample.Counter.Count);
         }
     }
 
