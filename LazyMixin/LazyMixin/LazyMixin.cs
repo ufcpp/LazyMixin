@@ -39,6 +39,11 @@ namespace Laziness
         public T Value => _value ?? (_value = new T());
 
         /// <summary>
+        /// Get value, if created.
+        /// </summary>
+        public T GetValueOrDefault() => _value;
+
+        /// <summary>
         /// Invokes value.Dispose if _value != null, then resets value to null.
         /// </summary>
         /// <remarks>
