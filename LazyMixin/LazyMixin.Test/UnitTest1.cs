@@ -27,6 +27,16 @@ namespace Laziness.Test
             sample.Counter.Add();
             Assert.Equal(4, sample.Counter.Count);
         }
+
+        [Fact]
+        public void TestGetValueOrDefault()
+        {
+            var sample = new LazyMixin<Counter>();
+            Assert.Null(sample.GetValueOrDefault());
+
+            var v = sample.Value;
+            Assert.Equal(v, sample.GetValueOrDefault());
+        }
     }
 
     class Sample
